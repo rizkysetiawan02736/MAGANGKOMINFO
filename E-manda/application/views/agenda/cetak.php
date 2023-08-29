@@ -1,10 +1,10 @@
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h2 align="center" class="h3 mb-0 text-gray-800"><i class="fas fa-briefcase"></i> Daftar Agenda</h2>
+    <h2 align="center" style="text-transform:uppercase" class="h3 mb-0 text-gray-800"><i class="fas fa-briefcase"></i> Daftar Agenda</h2>
 					<?php
 						$no=1;
 						foreach ($lost as $data => $value) {
 					?>
-        <h3 align="center" class="m-0 font-weight-bold text-success"><i class="fa fa-table"></i><?php echo $value->jabatan ?></h3>
+        <h3 align="center" style="text-transform:uppercase" class="m-0 font-weight-bold text-success"><i class="fa fa-table"></i><?php echo $value->jabatan ?></h3>
 					<?php
 						$no++;
                			 }
