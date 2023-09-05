@@ -35,7 +35,7 @@ class Login extends CI_Controller {
                 'status' => 'Logged'
             ];
             $this->session->set_userdata($log);            
-            redirect('Login/home');
+            redirect('dashboard');
           
         }
         else
@@ -49,7 +49,7 @@ class Login extends CI_Controller {
     public function logout()
     { 
         $this->session->sess_destroy();
-        redirect('login/logiin');
+        redirect('masuk');
     }
 
     public function home()

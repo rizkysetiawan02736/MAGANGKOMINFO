@@ -46,6 +46,7 @@
   <!-- Page level custom scripts -->
   <script src="<?= base_url('assets/')?>js/demo/datatables-demo.js"></script>
   
+  
   <script>
   $(function () {
 		$('[data-toggle="tooltip"]').tooltip()

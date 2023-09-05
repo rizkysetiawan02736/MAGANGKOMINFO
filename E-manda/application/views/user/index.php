@@ -3,7 +3,7 @@
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800"><i class="fas fa-fw fa-users-cog"></i> Data User</h1>
 
-    <a href="<?= base_url('User/create'); ?>" class="btn btn-success"> <i class="fa fa-plus"></i> Tambah Data </a>
+    <a href="<?= base_url(); ?>tambahdatauser" class="btn btn-success"> <i class="fa fa-plus"></i> Tambah Data </a>
 </div>
 
 <?= $this->session->flashdata('message'); ?>
@@ -47,9 +47,9 @@
 						</td>
 						<td>
 							<div class="btn-group" role="group">
-								<a data-toggle="tooltip" data-placement="bottom" title="Detail Data" href="<?=base_url('User/show/'.$value->id_user)?>" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
-								<a data-toggle="tooltip" data-placement="bottom" title="Edit Data" href="<?=base_url('User/edit/'.$value->id_user)?>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
-								<a  data-toggle="tooltip" data-placement="bottom" title="Hapus Data" href="<?=base_url('User/destroy/'.$value->id_user)?>" onclick="return confirm ('Apakah anda yakin untuk meghapus data ini')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+								<a data-toggle="tooltip" data-placement="bottom" title="Detail Data" href="<?=base_url('lihat-user/'.$value->id_user)?>" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
+								<a data-toggle="tooltip" data-placement="bottom" title="Edit Data" href="<?=base_url('ubah-user/'.$value->id_user)?>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
+								<a  data-toggle="tooltip" data-placement="bottom" title="Hapus Data" href="<?=base_url('hapus-user/'.$value->id_user)?>" onclick="return confirm ('Apakah anda yakin untuk meghapus data ini')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
 							</div>
 						</td>
 					</tr>

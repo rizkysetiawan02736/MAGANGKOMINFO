@@ -64,7 +64,7 @@
                         </div>
                     </div>
                                         <div class="d-plex justify-content-between mt-4">
-                                            <center style = "font-family: calibri; font-size:14pt; color:#ffff;">Belum memiliki akun?<a style="color:#37517e"href="<?= base_url('Register'); ?>"> Daftar di sini</a> </center>
+                                            <center style = "font-family: calibri; font-size:14pt; color:#ffff;">Belum memiliki akun?<a style="color:#37517e"href="<?= base_url(); ?>daftar"> Daftar di sini</a> </center>
                                         </div>
 
                                         <a href="<?= base_url(); ?>">

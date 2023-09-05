@@ -9,20 +9,20 @@ class Agenda extends CI_Controller{
             $this->load->library('form_validation');
             $this->load->model('Agenda_model');
 
+            if ($this->session->userdata('id_user_level') != "1") {
+                ?>
+                    <script type="text/javascript">
+                        
+                        window.location="<?php echo base_url(); ?>404_override"
+                    </script>
+                <?php
+                }
+
            
         }
 
         public function index()
         {
-            if ($this->session->userdata('id_user_level') != "1") {
-                ?>
-                    <script type="text/javascript">
-                        alert('Anda tidak berhak mengakses halaman ini!');
-                        window.location='<?php echo base_url("Login/home"); ?>'
-                    </script>
-                <?php
-                }
-
             $data['page'] = "Agenda";
 			$data['list'] = $this->Agenda_model->tampil();
             $this->load->view('agenda/create', $data);
@@ -73,38 +73,55 @@ class Agenda extends CI_Controller{
 
          }
 
+         public function show($id_agenda)
+        {
+            $Agenda = $this->Agenda_model->show($id_agenda);
+            $data = [
+				'page' => "Agenda",
+                'data' => $Agenda
+            ];
+            $this->load->view('Agenda/show', $data);
+        }
+
+
+         public function edit($id_agenda)
+        {
+            $Agenda = $this->Agenda_model->show($id_agenda);
+            $data = [
+                'page' => "Agenda",
+				'Agenda' => $Agenda
+            ];
+            $this->load->view('Agenda/edit', $data);
+        }
+
          
 
-        public function update($id)
+         public function update($id_agenda)
         {
-            // TODO: implementasi update data berdasarkan $id
-            $id = $this->input->post('id');
+            // TODO: implementasi update data berdasarkan $id_user
+            $id_user = $this->input->post('id_agenda');
             $data = array(
-                'nama_agenda' => $this->input->post('nama_agenda'),
+                'page' => "Agenda",
+				'id_user' => $this->input->post('id_user'),
+				'nama_agenda' => $this->input->post('nama_agenda'),
                 'tanggal' => $this->input->post('tanggal'),
+                'jam' => $this->input->post('jam'),
+                'tempat' => $this->input->post('tempat'),
+                'leading_sector' => $this->input->post('leading_sector'),
+                'disposisi' => $this->input->post('disposisi'),
+                'keterangan' => $this->input->post('keterangan')
             );
 
-            $this->Agenda_model->update($id, $data);
+            $this->Agenda_model->update($id_agenda, $data);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data berhasil diupdate!</div>');
-			redirect('Agenda');
+			redirect('Cetak/hasiladmin');
         }
     
-        public function destroy($id)
+        public function destroy($id_agenda)
         {
-            $this->Agenda_model->delete($id);
+            $this->Agenda_model->delete($id_agenda);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data berhasil dihapus!</div>');
-			redirect('Agenda');
-        }
-
-
-        public function hasil1()
-        {  
-            $data = [
-                'page' => "agenda1",
-				'hasil'=> $this->Agenda_model->get_hasil1()
-            ];
-			
-            $this->load->view('agenda/agenda1', $data);
+			redirect('Cetak/hasiladmin');
         }
 
 

@@ -56,7 +56,7 @@
           
          
           
-          <li><a class="getstarted scrollto" href="<?= base_url(); ?>/login/logiin">Login</a></li>
+          <li><a class="getstarted scrollto" href="<?= base_url(); ?>masuk">Login</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

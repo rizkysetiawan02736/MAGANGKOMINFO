@@ -10,6 +10,12 @@
             return $query->result();
         }
 
+        public function cari_user($id_user)
+        {
+            $query=$this->db->get_where('user',array('nama'=>$id_user));
+            return $query;
+        }
+
         public function getTotal()
         {
             return $this->db->count_all('user');

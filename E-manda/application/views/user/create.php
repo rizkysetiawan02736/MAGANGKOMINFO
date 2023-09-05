@@ -3,7 +3,7 @@
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800"><i class="fas fa-fw fa-users-cog"></i> Data User</h1>
 
-	<a href="<?= base_url('User'); ?>" class="btn btn-secondary btn-icon-split"><span class="icon text-white-50"><i class="fas fa-arrow-left"></i></span>
+	<a href="<?= base_url(); ?>tabeluser" class="btn btn-secondary btn-icon-split"><span class="icon text-white-50"><i class="fas fa-arrow-left"></i></span>
 		<span class="text">Kembali</span>
 	</a>
 </div>
@@ -41,6 +41,11 @@
 				<div class="form-group col-md-6">
 					<label class="font-weight-bold">Jabatan</label>
 					<input autocomplete="off" type="text" name="jabatan" required class="form-control"/>
+				</div>
+
+				<div class="form-group col-md-6">
+					<label class="font-weight-bold">Nomor Whatsapp</label>
+					<input autocomplete="off" type="text" name="no_whatsapp" required class="form-control"/>
 				</div>
 				
 				<div class="form-group col-md-6">

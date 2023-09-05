@@ -38,7 +38,7 @@ class Register extends CI_Controller {
 			$this->form_validation->set_rules('email', 'email', 'required');
 			$this->form_validation->set_rules('privilege', 'ID User Level', 'required');
 			$this->form_validation->set_rules('username', 'Username', 'required|is_unique[user.username]');
-			$this->form_validation->set_rules('password', 'Password', 'required');			
+			$this->form_validation->set_rules('password', 'Password', 'required|min_length[8]');			
 
 			if ($this->form_validation->run() != false) {
 				$result = $this->User_model->insert($data);

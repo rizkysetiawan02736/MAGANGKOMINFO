@@ -30,7 +30,6 @@
             <div class="form-row">
             <div class="col-md-12">
 
-
             <div class="form-group">
                 <label for="email" class="float-left" style="color:#ffffff;">E-mail</label>
                 <div>
@@ -39,30 +38,37 @@
             </div>
 
             <div class="form-group">
-                <label for="address" class="float-left" style="color:#ffffff;">Username</label>
+                <label for="username" class="float-left" style="color:#ffffff;">Username</label>
                 <div>
                 <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="address" class="float-left" style="color:#ffffff;">Password</label>
+                <label for="pass" class="float-left" style="color:#ffffff;">Password</label>
                 <div>
                 <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="address" class="float-left" style="color:#ffffff;">Nama Lengkap</label>
+                <label for="nama" class="float-left" style="color:#ffffff;">Nama Lengkap</label>
                 <div>
                 <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Lengkap" required>
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="address" class="float-left" style="color:#ffffff;">Jabatan</label>
+                <label for="jabatan" class="float-left" style="color:#ffffff;">Jabatan</label>
                 <div>
                 <input type="text" class="form-control" id="jabatan" name="jabatan" placeholder="Jabatan" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="wa" class="float-left" style="color:#ffffff;">Nomor Whatsapp</label>
+                <div>
+                <input type="text" class="form-control" id="no_whatsapp" name="no_whatsapp" placeholder="Nomor Whatsapp" required>
                 </div>
             </div>
 
@@ -75,7 +81,7 @@
             </div>
             <br>
             <br>
-            <br>
+            
 
             
             <button type="submit" class="btn btn-info float-right "> Simpan</button>
@@ -107,7 +113,7 @@
 
 </div>
                                         <div class="d-plex justify-content-between mt-4">
-                                            <center style = "font-family: calibri; font-size:14pt; color:#00000;">Sudah memiliki akun?<a style="color:#37517e"href="<?= base_url(); ?>/login/logiin"> Login di sini</a> </center>
+                                            <center style = "font-family: calibri; font-size:14pt; color:#00000;">Sudah memiliki akun?<a style="color:#37517e"href="<?= base_url(); ?>masuk"> Login di sini</a> </center>
                                         </div>
 </div>
 </div>

@@ -50,5 +50,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'welcome';
-$route['404_override'] = '';
+$route['404_override'] = 'Kustom404';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['tabelagenda']='Cetak/hasil';
+$route['tabelagendaadmin']='Cetak/hasiladmin';
+$route['tabeluser']='User';
+$route['dataprofil']='Profile';
+$route['tabeluser']='User';
+$route['tambahagenda']='Agenda/create';
+$route['dashboard']='Login/home';
+$route['cetakagenda']='Cetak';
+$route['cetakagendaadmin']='Cetak/cetakadmin';
+$route['daftar']='Register';
+$route['masuk']='Login/logiin';
+$route['tambahdatauser']='User/create';
+$route['kirimnotif']='Send';
+$route['carinohp']='Send/cari';
+
+$route['ubah-user/(:num)']='User/edit/$1';
+$route['lihat-user/(:num)']='User/show/$1';
+$route['hapus-user/(:num)']='User/destroy/$1';
+
+$route['hapus-agenda/(:num)']='Agenda/destroy/$1';
+$route['ubah-agenda/(:num)']='Agenda/edit/$1';
+$route['lihat-agenda/(:num)']='Agenda/show/$1';

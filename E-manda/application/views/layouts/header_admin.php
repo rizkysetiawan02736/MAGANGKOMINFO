@@ -39,7 +39,7 @@ if($this->session->status !== ('Logged'))
     <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('Login/home'); ?>">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url(); ?>dashboard">
         <div >
         <img class="me-3" src="<?= base_url('assets/')?>img/amndari.png" alt="" width="50" height="50" />
         </div>
@@ -51,7 +51,7 @@ if($this->session->status !== ('Logged'))
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item <?php if($page=='Dashboard'){echo 'active';}?>">
-        <a class="nav-link" href="<?= base_url('Login/home'); ?>">
+        <a class="nav-link" href="<?= base_url(); ?>dashboard">
           <i class="fas fa-fw fa-home"></i>
           <span>Dashboard</span></a>
       </li>
@@ -67,7 +67,7 @@ if($this->session->status !== ('Logged'))
 	  <?php if($this->session->userdata('id_user_level') == '1'): ?>
 	  
 	  <li class="nav-item <?php if($page=='Hasil'){echo 'active';}?>">
-        <a class="nav-link" href="<?= base_url('Agenda/hasil1'); ?>">
+        <a class="nav-link" href="<?= base_url(); ?>tabelagendaadmin">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Data Agenda</span></a>
       </li>
@@ -75,7 +75,7 @@ if($this->session->status !== ('Logged'))
 	  
 	  <?php if($this->session->userdata('id_user_level') == '2'): ?>
 	  <li class="nav-item <?php if($page=='Hasil'){echo 'active';}?>">
-        <a class="nav-link" href="<?= base_url('Agenda/hasil1'); ?>">
+        <a class="nav-link" href="<?= base_url(); ?>tabelagenda">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Data Agenda</span></a>
       </li>	
@@ -91,14 +91,14 @@ if($this->session->status !== ('Logged'))
 
 	  <?php if($this->session->userdata('id_user_level') == '1'): ?>
 	  <li class="nav-item <?php if($page=='User'){echo 'active';}?>">
-        <a class="nav-link" href="<?= base_url('User'); ?>">
+        <a class="nav-link" href="<?= base_url(); ?>tabeluser">
           <i class="fas fa-fw fa-users-cog"></i>
           <span>Data User</span></a>
       </li>
 	  <?php endif; ?>
 
 	  <li class="nav-item <?php if($page=='Profile'){echo 'active';}?>">
-        <a class="nav-link" href="<?= base_url('Profile'); ?>">
+        <a class="nav-link" href="<?= base_url(); ?>dataprofil">
           <i class="fas fa-fw fa-user"></i>
           <span>Data Profile</span></a>
       </li>
@@ -115,10 +115,17 @@ if($this->session->status !== ('Logged'))
 
 
       <li class="nav-item <?php if($page=='Agenda'){echo 'active';}?> ">
-        <a class="nav-link" href="<?= base_url('Agenda/create'); ?>">
+        <a class="nav-link" href="<?= base_url(); ?>tambahagenda">
           <i class="fas fa-briefcase"></i>
           <span>Tambah Agenda</span></a>
       </li>
+
+      <li class="nav-item <?php if($page=='Send'){echo 'active';}?> ">
+        <a class="nav-link" href="<?= base_url(); ?>kirimnotif">
+          <i class="fas fa-comment"></i>
+          <span>Kirim Notifikasi</span></a>
+      </li>
+
       <?php endif; ?>
 	 
 
@@ -160,7 +167,7 @@ if($this->session->status !== ('Logged'))
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="<?= base_url('Profile'); ?>">
+                <a class="dropdown-item" href="<?= base_url(); ?>dataprofil">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>

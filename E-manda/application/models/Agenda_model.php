@@ -21,14 +21,18 @@
 
         public function tampil_tanggal()
         {
-            $query = $this->db->query('SELECT DISTINCT tanggal FROM agenda where tanggal >= NOW()');
-            return $query->result();
+            $this->db->where('agenda.id_user', $this->session->userdata('id_user'));
+            $this->db->select_min('tanggal');
+            $this->db->where('tanggal >= NOW()');
+            return $this->db->get('agenda')->result();
         }
 
         public function tampil_jabatan()
         {
-            $query = $this->db->query('SELECT DISTINCT user.jabatan FROM user inner join agenda on user.id_user=agenda.id_user');
-            return $query->result();
+            $this->db->where('user.id_user', $this->session->userdata('id_user'));
+            return $this->db->get('user')->result();
+            
+
         }
 
         public function tampil_gabungan()
@@ -39,26 +43,57 @@
             return $query->result();
         }
 
-        public function update($id, $data = [])
+        public function update($id_agenda, $data = [])
         {
             $ubah = array(
+                'id_agenda'  => $data['id_agenda'],
                 'nama_agenda' => $data['nama_agenda'],
-                'tanggal'  => $data['tanggal']
+                'tanggal'  => $data['tanggal'],
+                'jam'  => $data['jam'],
+                'tempat'  => $data['tempat'],
+                'leading_sector'  => $data['leading_sector'],
+                'disposisi'  => $data['disposisi'],
+                'keterangan'  => $data['keterangan']
+                
             );
 
-            $this->db->where('id', $id);
+            $this->db->where('id_agenda', $id_agenda);
             $this->db->update('agenda', $ubah);
         }
 
-        public function delete($id)
+        public function delete($id_agenda)
         {
-            $this->db->where('id', $id);
+            $this->db->where('id_agenda', $id_agenda);
             $this->db->delete('agenda');
         }
 
-        public function get_hasil1()
+        // public function get_hasil()
+        // {   
+		// 	$query = $this->db->query('SELECT DISTINCT tanggal FROM agenda WHERE tanggal >= NOW()');
+        //     return $query->result();
+        // }
+
+        // public function getAgendauser(){
+        //     $this->db->where('agenda.id_user', $this->session->userdata('id_user'));
+        //     return $this->db->get('agenda')->result();
+        // }
+        
+        public function getAgendauser(){
+            $this->db->where('agenda.id_user', $this->session->userdata('id_user'));
+            $this->db->where('tanggal >= NOW()');
+            return $this->db->get('agenda')->result();
+        }
+
+        public function getAgendaadmin()
         {
-			$query = $this->db->query('SELECT * FROM agenda WHERE tanggal >= NOW()');
+            $query = $this->db->query('SELECT * FROM agenda');
             return $query->result();
+        }
+
+        public function show($id_agenda)
+        {
+            $this->db->where('id_agenda', $id_agenda);
+            $query = $this->db->get('agenda');
+            return $query->row();
         }
 }
