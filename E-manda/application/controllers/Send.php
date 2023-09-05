@@ -76,10 +76,10 @@ class Send extends CI_Controller {
 			if (isset($response)) 
 			{
 			$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Pesan berhasil dikirim!</div>');
-            redirect('Send');
+            redirect('kirimnotif');
 			}else {
 				$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Pesan gagal dikirim!</div>');
-				redirect('Send');
+				redirect('kirimnotif');
 
 			}
 

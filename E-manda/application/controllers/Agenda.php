@@ -62,11 +62,11 @@ class Agenda extends CI_Controller{
 				$result = $this->Agenda_model->insert($data);
 				if ($result) {
 					$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data berhasil disimpan!</div>');
-					redirect('Agenda');
+					redirect('tambahagenda');
 				}
 			} else {
 				$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Data gagal disimpan!</div>');
-				redirect('Agenda/create');
+				redirect('tambahagenda');
 				
 			}
                 
@@ -114,14 +114,14 @@ class Agenda extends CI_Controller{
 
             $this->Agenda_model->update($id_agenda, $data);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data berhasil diupdate!</div>');
-			redirect('Cetak/hasiladmin');
+			redirect('tabelagendaadmin');
         }
     
         public function destroy($id_agenda)
         {
             $this->Agenda_model->delete($id_agenda);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data berhasil dihapus!</div>');
-			redirect('Cetak/hasiladmin');
+			redirect('tabelagendaadmin');
         }
 
 

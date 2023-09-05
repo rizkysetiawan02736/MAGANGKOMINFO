@@ -14,7 +14,7 @@ class Login extends CI_Controller {
     {
         if($this->Login_model->logged_id())
 		{
-			redirect('Login/home');
+			redirect('dashboard');
 		}else{
 		$this->load->view('login/login');
 		}
@@ -41,7 +41,7 @@ class Login extends CI_Controller {
         else
         {
             $this->session->set_flashdata('message', 'Username atau Password Salah');
-            redirect('login/logiin');
+            redirect('masuk');
         }
         
     }

@@ -67,7 +67,7 @@
 				}
 			} else {
 				$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Data gagal disimpan!</div>');
-				redirect('User/create');
+				redirect('tambahdatauser');
 				
 			}
             
@@ -114,14 +114,14 @@
 
             $this->User_model->update($id_user, $data);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data berhasil diupdate!</div>');
-			redirect('User');
+			redirect('tabeluser');
         }
     
         public function destroy($id_user)
         {
             $this->User_model->delete($id_user);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data berhasil dihapus!</div>');
-			redirect('User');
+			redirect('tabeluser');
         }
     
     }

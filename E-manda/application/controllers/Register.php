@@ -44,11 +44,11 @@ class Register extends CI_Controller {
 				$result = $this->User_model->insert($data);
 				if ($result) {
 					$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data berhasil disimpan!</div>');
-					redirect('Register');
+					redirect('daftar');
 				}
 			} else {
 				$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Data gagal disimpan!</div>');
-				redirect('Register/create');
+				redirect('daftar');
 				
 			}
             
