@@ -28,8 +28,8 @@ class Register extends CI_Controller {
             
 			$data = [
 				'id_user_level' => $this->input->post('privilege'),
-				'nama' => $this->input->post('nama'),
-				'jabatan' => $this->input->post('jabatan'),
+				'nama' => strtoupper($this->input->post('nama')),
+				'jabatan' => strtoupper($this->input->post('jabatan')),
 				'email' => $this->input->post('email'),
 				'username' => $this->input->post('username'),
 				'no_whatsapp' => $this->input->post('no_whatsapp'),
