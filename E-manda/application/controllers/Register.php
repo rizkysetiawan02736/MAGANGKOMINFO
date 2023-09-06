@@ -32,13 +32,15 @@ class Register extends CI_Controller {
 				'jabatan' => $this->input->post('jabatan'),
 				'email' => $this->input->post('email'),
 				'username' => $this->input->post('username'),
+				'no_whatsapp' => $this->input->post('no_whatsapp'),
 				'password' => md5($this->input->post('password'))
 			];
 			
 			$this->form_validation->set_rules('email', 'email', 'required');
 			$this->form_validation->set_rules('privilege', 'ID User Level', 'required');
 			$this->form_validation->set_rules('username', 'Username', 'required|is_unique[user.username]');
-			$this->form_validation->set_rules('password', 'Password', 'required|min_length[8]');			
+			$this->form_validation->set_rules('password', 'Password', 'required|min_length[8]');	
+			$this->form_validation->set_rules('no_whatsapp', 'no_whatsapp', 'required');
 
 			if ($this->form_validation->run() != false) {
 				$result = $this->User_model->insert($data);
