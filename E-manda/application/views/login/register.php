@@ -74,8 +74,8 @@
 
             <div class="form-group">
             <label for="Manufacturer" class="float-left" style="color:#ffffff;"> User Level : </label>
-            <select id="cmbUL" name="privilege" class="float-right">
-               <option value="0">Pilih</option>
+            <select id="cmbUL" name="privilege" class="float-right" required>
+               <option value="">Pilih</option>
                <option value="2">2</option>
             </select>
             </div>
