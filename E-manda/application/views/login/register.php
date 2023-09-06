@@ -5,6 +5,11 @@
         <meta charset="utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <title>Register E-MANDA</title>
+
+         <!-- Favicons -->
+            <link href="<?= base_url('assets/')?>img/emandaku.svg" rel="icon">
+            <link href="<?= base_url('assets/')?>img/emandaku.svg" rel="apple-touch-icon">
+        
             <link href="<?= base_url(); ?>assets/css/main.css" rel="stylesheet">
             
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
