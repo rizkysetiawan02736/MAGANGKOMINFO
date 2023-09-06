@@ -54,14 +54,14 @@
             <div class="form-group">
                 <label for="nama" class="float-left" style="color:#ffffff;">Nama Lengkap</label>
                 <div>
-                <input style="text-transform:uppercase" type="text" class="form-control" id="nama" name="nama" placeholder="Nama Lengkap" required>
+                <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Lengkap" required>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="jabatan" class="float-left" style="color:#ffffff;">Jabatan</label>
                 <div>
-                <input style="text-transform:uppercase" type="text" class="form-control" id="jabatan" name="jabatan" placeholder="Jabatan" required>
+                <input type="text" class="form-control" id="jabatan" name="jabatan" placeholder="Jabatan" required>
                 </div>
             </div>
 
