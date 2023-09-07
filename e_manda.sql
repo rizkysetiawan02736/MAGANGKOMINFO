@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Sep 2023 pada 08.27
+-- Waktu pembuatan: 07 Sep 2023 pada 05.52
 -- Versi server: 10.4.10-MariaDB
 -- Versi PHP: 7.3.12
 
@@ -45,10 +45,10 @@ CREATE TABLE `agenda` (
 --
 
 INSERT INTO `agenda` (`id_agenda`, `id_user`, `nama_agenda`, `tempat`, `leading_sector`, `disposisi`, `keterangan`, `tanggal`, `jam`) VALUES
-(1, 2, 'Penyerahan bantuan keapda pedagang kaki lima', 'Pantai Bandengan', 'Ds Bandengan', 'Hadir Pribadi', 'Penyerahan bantuan diberikan oleh bupati kepada para pedagang di sekitar pantai bandengan', '2024-07-09', '08:00:00'),
-(6, 2, 'Audiensi Festival kepemudaan Olahraga ', 'R Command Center', 'Pemerintahan', 'Hadir Pribadi', 'Dalam rangka memperingati HUT RI ke 79 Tahun 2024', '2024-07-09', '09:00:00'),
-(7, 2, 'Rapat pembahasan Ranperbub tentang perubahan APBD TA 2024', 'R Command Center', 'BPKAD', 'Hadir Pribadi', 'Besar biaya yang akan dianggarkan', '2024-07-09', '11:05:00'),
-(12, 2, 'Mendengarkan Pidato Kenegaraan', 'Ruang Paripurna', 'DPRD', 'Diwakilkan Ass 1', 'Berhalangan hadir karena tabrakan dengan agenda lain', '2024-07-09', '13:05:00');
+(0, 2, 'Audiensi Festival kepemudaan Olahraga ', 'R Command Center', 'Pemerintahan', 'Hadir Pribadi', 'Dalam rangka memperingati HUT RI ke 79 Tahun 2024', '2024-07-09', '09:00:00'),
+(1, 3, 'Penyerahan bantuan keapda pedagang kaki lima', 'Pantai Bandengan', 'Ds Bandengan', 'Hadir Pribadi', 'Penyerahan bantuan diberikan oleh bupati kepada para pedagang di sekitar pantai bandengan', '2024-07-09', '08:00:00'),
+(7, 4, 'Rapat pembahasan Ranperbub tentang perubahan APBD TA 2024', 'R Command Center', 'BPKAD', 'Hadir Pribadi', 'Besar biaya yang akan dianggarkan', '2024-07-09', '11:05:00'),
+(12, 5, 'Mendengarkan Pidato Kenegaraan', 'Ruang Paripurna', 'DPRD', 'Diwakilkan Ass 1', 'Berhalangan hadir karena tabrakan dengan agenda lain', '2024-07-09', '13:05:00');
 
 -- --------------------------------------------------------
 
@@ -72,9 +72,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `id_user_level`, `no_whatsapp`, `nama`, `jabatan`, `email`, `username`, `password`) VALUES
-(1, 1, '089675439815', 'Muhammad Rizky Setiawan', 'admind kominfo', 'rizkysetiawan010201@gmail.com', 'admin', '21232f297a57a5a743894a0e4a801fc3'),
-(2, 2, '085712110047', 'Akhmad Rifqun Nabil', 'Bupati Jepara', 'bupatijepara@gmail.com', 'bupati', 'c78de339ede23183fc9655b17fd6ba95'),
-(3, 2, '081225046170', 'Afrian Dhimas Anthony', 'Bupati Kudus', '122201902736@mhs.dinus.ac.id', 'afriandimas_', '25d55ad283aa400af464c76d713c07ad');
+(1, 1, '089675439815', 'MUHAMMAD RIZKY SETIAWAN', 'SUPER ADMIN', 'rizkysetiawan010201@gmail.com', 'admin', '21232f297a57a5a743894a0e4a801fc3'),
+(2, 2, '085712110047', 'AKHMAD RIFQUN NABIL', 'ADMIN KPU', 'bupatijepara@gmail.com', 'bupati', 'c78de339ede23183fc9655b17fd6ba95'),
+(3, 2, '081225046170', 'AFRIAN DHIMAS ANTHONY', 'ADMIN DISNAKER', '122201902736@mhs.dinus.ac.id', 'afriandimas_', '25d55ad283aa400af464c76d713c07ad'),
+(4, 2, '087654321007', 'AINUL HAQ YUDHISTIRA', 'ADMIN BPS', 'cubicubi@gmail.com', 'admin9090', '25d55ad283aa400af464c76d713c07ad');
 
 -- --------------------------------------------------------
 
@@ -126,13 +127,13 @@ ALTER TABLE `user_level`
 -- AUTO_INCREMENT untuk tabel `agenda`
 --
 ALTER TABLE `agenda`
-  MODIFY `id_agenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_agenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `user_level`

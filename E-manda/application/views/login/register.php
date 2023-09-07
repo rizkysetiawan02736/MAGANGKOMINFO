@@ -5,6 +5,11 @@
         <meta charset="utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <title>Register E-MANDA</title>
+
+            <!-- Favicons -->
+            <link href="<?= base_url('assets/')?>img/emandaku.svg" rel="icon">
+            <link href="<?= base_url('assets/')?>img/emandaku.svg" rel="apple-touch-icon">
+            
             <link href="<?= base_url(); ?>assets/css/main.css" rel="stylesheet">
             
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -19,6 +24,7 @@
                         <div class="modal-dialog w-100 mx-auto">
                                 <div class="modal-content" style="background:#1cc88a;" >
                                 <div class="modal-body">
+                                    
     <?php echo form_open_multipart('Register/store')?>
 
     <div class="h5 modal-title text-center">
@@ -74,8 +80,8 @@
 
             <div class="form-group">
             <label for="Manufacturer" class="float-left" style="color:#ffffff;"> User Level : </label>
-            <select id="cmbUL" name="privilege" class="float-right">
-               <option value="0">Pilih</option>
+            <select id="cmbUL" name="privilege" class="float-right" required>
+               <option value="">Pilih</option>
                <option value="2">2</option>
             </select>
             </div>
@@ -107,7 +113,7 @@
                     </div>
             </div>
     </div>
-    <br>
+    
     
 </div>
 

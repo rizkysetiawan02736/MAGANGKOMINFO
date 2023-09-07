@@ -46,7 +46,7 @@
         public function update($id_agenda, $data = [])
         {
             $ubah = array(
-                'id_agenda'  => $data['id_agenda'],
+                'id_user'  => $data['id_user'],
                 'nama_agenda' => $data['nama_agenda'],
                 'tanggal'  => $data['tanggal'],
                 'jam'  => $data['jam'],
@@ -95,5 +95,18 @@
             $this->db->where('id_agenda', $id_agenda);
             $query = $this->db->get('agenda');
             return $query->row();
+        }
+
+        function getdata()
+    {
+        $query = $this->db->query("SELECT nama FROM user ORDER BY id_user");
+
+        return $query->result();
+    }
+
+    public function cari_user($id_user)
+        {
+            $query=$this->db->get_where('user',array('nama'=>$id_user));
+            return $query;
         }
 }

@@ -99,10 +99,6 @@
 
          
 
-       
-
-          
-
           <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
             <img src="assets/img/logo-kominfo.png" class="img-fluid" alt="">
           </div>
@@ -118,7 +114,6 @@
           <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
           <img class="img-fluid" src="assets/img/nusdin.png" alt="" >
           </div>
-          
 
          
 
@@ -153,11 +148,6 @@
     
 
    
-
-    
-
-    
-
     <!-- ======= Team Section ======= -->
     <section id="team" class="team section-bg">
       <div class="container" data-aos="fade-up">
@@ -194,10 +184,7 @@
 
    
 
-    
-
-    
-
+  
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->

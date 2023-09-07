@@ -29,6 +29,8 @@ if($this->session->status !== ('Logged'))
   <link rel="shortcut icon" href="<?= base_url('assets/')?>img/emandaku.svg" type="image/x-icon">
   <link rel="icon" href="<?= base_url('assets/')?>img/emandaku.svg" type="image/x-icon">
 
+  
+
 </head>
 <body id="page-top">
 
@@ -108,7 +110,7 @@ if($this->session->status !== ('Logged'))
 	  
 	  <!-- Heading -->
       <div class="sidebar-heading">
-        Create
+        Tools
       </div>
 
     <?php if($this->session->userdata('id_user_level') == '1'): ?>

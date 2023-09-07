@@ -67,6 +67,7 @@ $route['masuk']='Login/logiin';
 $route['tambahdatauser']='User/create';
 $route['kirimnotif']='Send';
 $route['carinohp']='Send/cari';
+$route['cariiduser']='Agenda/cari';
 
 $route['ubah-user/(:num)']='User/edit/$1';
 $route['lihat-user/(:num)']='User/show/$1';

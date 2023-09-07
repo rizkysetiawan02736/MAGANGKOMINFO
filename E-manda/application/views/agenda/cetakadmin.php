@@ -1,6 +1,5 @@
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h2 align="center" style="text-transform:uppercase" class="h3 mb-0 text-gray-800"><i class="fas fa-briefcase"></i> Daftar Agenda</h2>
-					
+    <h2 align="center" style="text-transform:uppercase" class="h3 mb-0 text-gray-800"><i class="fas fa-briefcase"></i> Daftar Agenda</h2>				
 </div>
 
 <?= $this->session->flashdata('message'); ?>
@@ -52,3 +51,4 @@
 		</div>
 	</div>
 </div>
+

@@ -1,9 +1,19 @@
 
 <?php $this->load->view('layouts/header_admin'); ?>
 
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800"><i class="fas fa-fw fa-address-book"></i> Data User</h1>	
+</div>
+
 <?= $this->session->flashdata('message'); ?>
 
 <script src="<?php echo base_url(); ?>assets/js/ajax.js"></script>
+
+<div class="card shadow mb-4">
+<div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-success"><i class="fas fa-fw fa-plus"></i> Kirim Notifikasi</h6>
+    </div>
+    <br>
 
   <div class="content">
     <div class="container">
@@ -35,10 +45,14 @@
 
             <div class="form-group">
             <div class="submit"><button type="submit" name="submit" id="btn-wa" class="btn btn-info float-right ">Send</button></div>
-            <div class="submit"><button type="reset" name="reset" id="btn-reset" class="btn btn-danger float-left ">Reset</button></div>
+            <div class="reset"><button type="reset" name="reset" id="btn-reset" class="btn btn-danger float-left ">Reset</button></div>
             </div>
+
+            
               
             </form>
+
+            
 
             <datalist id="data_user">
             <?php
@@ -81,6 +95,8 @@
         
       </div>
     </div>
+  </div>
+<br>
   </div>
 
   

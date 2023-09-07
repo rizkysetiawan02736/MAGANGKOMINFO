@@ -28,10 +28,14 @@ class Agenda extends CI_Controller{
             $this->load->view('agenda/create', $data);
         }
 
+
+        
+
         //menampilkan view create
         public function create()
         {
 			$data['page'] = "Agenda";
+            $data['list'] = $this->Agenda_model->getdata();
             $this->load->view('agenda/create', $data);
         }
 
@@ -122,6 +126,12 @@ class Agenda extends CI_Controller{
             $this->Agenda_model->delete($id_agenda);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data berhasil dihapus!</div>');
 			redirect('tabelagendaadmin');
+        }
+
+        public function cari(){
+            $nama=$_GET['nama'];
+            $cari=$this->Agenda_model->cari_user($nama)->result();
+            echo json_encode($cari);
         }
 
 

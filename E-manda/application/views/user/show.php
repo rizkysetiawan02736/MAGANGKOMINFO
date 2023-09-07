@@ -37,6 +37,10 @@
 					<td><?php echo $data->nama?></td>
 				</tr>
 				<tr>
+					<th class="bg-light">Jabatan</th>
+					<td><?php echo $data->jabatan?></td>
+				</tr>
+				<tr>
 					<th class="bg-light">Level</th>
 					<td>
 					<?php
