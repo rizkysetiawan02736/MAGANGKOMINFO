@@ -59,7 +59,7 @@ class Cetak extends CI_Controller
 				'agenda_user'=> $this->Agenda_model->getAgendauser()
             ];
 			
-            $this->load->view('agenda/tabelagenda', $data);
+            $this->load->view('agenda/tabelagendarencana', $data);
         }
 
 

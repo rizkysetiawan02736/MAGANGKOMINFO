@@ -76,3 +76,7 @@ $route['hapus-user/(:num)']='User/destroy/$1';
 $route['hapus-agenda/(:num)']='Agenda/destroy/$1';
 $route['ubah-agenda/(:num)']='Agenda/edit/$1';
 $route['lihat-agenda/(:num)']='Agenda/show/$1';
+
+$route['uh/(:num)']='Approval/hadir_pribadi/$1';
+$route['ud/(:num)']='Approval/diwakilkan/$1';
+// $route['ubah-keterangan/(:num)']='Agenda/keterangan/$1';

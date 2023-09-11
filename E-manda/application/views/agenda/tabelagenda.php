@@ -7,7 +7,6 @@
 		<span class="text">Print</span>
 	</a>
 	
-	
 </div>
 
 <div class="card shadow mb-4">
@@ -47,8 +46,7 @@
 						<td><?php echo $value->leading_sector ?></td>
 						<td><?php echo $value->disposisi ?></td>
 						<td><?php echo $value->keterangan ?></td>
-						
-						
+											
                 <?php
 					$no++;
                 }

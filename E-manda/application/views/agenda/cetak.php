@@ -15,7 +15,7 @@
 
 <div class="card shadow mb-4">
     <!-- /.card-header -->
-    <div class="card-header py-3">
+    <!-- <div class="card-header py-3">
 					<?php
 						$no=1;
 						foreach ($lust as $data => $value) {
@@ -25,7 +25,9 @@
 						$no++;
                			 }
 					?>
-	</div>
+	</div> -->
+
+	<br>
 
     <div class="card-body">
 		<div class="table-responsive">
@@ -33,6 +35,7 @@
 				<thead class="bg-success text-white">
 					<tr align="center">
 						<th width="5%">No</th>
+						<th>Tanggal</th>
 						<th>Jam</th>
 						<th>Agenda</th>
 						<th>Tempat</th>
@@ -50,6 +53,7 @@
 					?>
 					<tr align="center">
 						<td><?=$no ?></td>
+						<td><?php echo $value->tanggal ?></td>
 						<td><?php echo $value->jam ?></td>
 						<td><?php echo $value->nama_agenda ?></td>
 						<td><?php echo $value->tempat ?></td>

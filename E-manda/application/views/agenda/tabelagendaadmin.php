@@ -27,7 +27,7 @@
 						<th>Jam</th>
 						<th>Agenda</th>
 						<th>Tempat</th>
-						<th>Leading Sector</th>
+						<th>Sector</th>
 						<th>Disposisi</th>
 						<th>Keterangan</th>
 						<th width="15%">Aksi</th>

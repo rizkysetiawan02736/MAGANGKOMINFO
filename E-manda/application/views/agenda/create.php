@@ -59,19 +59,15 @@
 
 				<div class="form-group col-md-6">
 					<label class="font-weight-bold">Disposisi</label>
-					<input autocomplete="off" type="text" name="disposisi" required class="form-control" />
+					<input autocomplete="off" type="text" name="disposisi" class="form-control" />
 				</div>
 
 				<div class="form-group col-md-6">
 					<label class="font-weight-bold">Keterangan</label>
-					<input autocomplete="off" type="text" name="keterangan" required class="form-control" />
+					<input autocomplete="off" type="text" name="keterangan" class="form-control" />
 				</div>
 				
-            
-
-                           
-				
-				
+            			
 			</div>
 		</div>
 		<div class="card-footer text-right" >

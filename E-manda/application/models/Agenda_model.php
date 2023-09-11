@@ -81,12 +81,13 @@
         public function getAgendauser(){
             $this->db->where('agenda.id_user', $this->session->userdata('id_user'));
             $this->db->where('tanggal >= NOW()');
+            $this->db->order_by('tanggal ASC');
             return $this->db->get('agenda')->result();
         }
 
         public function getAgendaadmin()
         {
-            $query = $this->db->query('SELECT * FROM agenda');
+            $query = $this->db->query('SELECT * FROM agenda order by tanggal asc');
             return $query->result();
         }
 
@@ -109,4 +110,15 @@
             $query=$this->db->get_where('user',array('nama'=>$id_user));
             return $query;
         }
+
+    // public function update_keterangan($id_agenda, $data = [])
+    // {
+    //     $ubah = array(
+    //         'keterangan'  => $data['keterangan']
+            
+    //     );
+    //     $this->db->where('id_agenda', $id_agenda);
+    //     $this->db->update('agenda', $ubah);
+    // }
+
 }

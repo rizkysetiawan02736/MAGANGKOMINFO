@@ -59,8 +59,7 @@ class Agenda extends CI_Controller{
 			$this->form_validation->set_rules('jam', 'jam', 'required');
 			$this->form_validation->set_rules('tempat', 'tempat', 'required');
 			$this->form_validation->set_rules('leading_sector', 'leading_sector', 'required');
-			$this->form_validation->set_rules('disposisi', 'disposisi', 'required');
-			$this->form_validation->set_rules('keterangan', 'keterangan', 'required');
+			
 
             if ($this->form_validation->run() != false) {
 				$result = $this->Agenda_model->insert($data);
@@ -102,8 +101,8 @@ class Agenda extends CI_Controller{
 
          public function update($id_agenda)
         {
-            // TODO: implementasi update data berdasarkan $id_user
-            $id_user = $this->input->post('id_agenda');
+            // TODO: implementasi update data berdasarkan $id_agenda
+            $id_agenda = $this->input->post('id_agenda');
             $data = array(
                 'page' => "Agenda",
 				'id_user' => $this->input->post('id_user'),
@@ -133,6 +132,36 @@ class Agenda extends CI_Controller{
             $cari=$this->Agenda_model->cari_user($nama)->result();
             echo json_encode($cari);
         }
+
+        
+    public function hadir_pribadi($id_agenda)
+    {
+        $sql="UPDATE agenda SET disposisi='Hadir Pribadi' WHERE id_agenda=$id_agenda";
+        $this->db->query($sql);
+        $this->session->set_flashdata('message','<div class="alert alert-success" role="alert">  Kehadiran telah berhasil diubah<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+        redirect('tabelagenda');
+    }
+
+    public function diwakilkan($id_agenda)
+    {
+        $sql="UPDATE agenda SET disposisi='Diwakilkan' WHERE id_agenda=$id_agenda";
+        $this->db->query($sql);
+        $this->session->set_flashdata('message','<div class="alert alert-warning" role="alert">  Kehadiran telah berhasil diubah<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+        redirect('tabelagenda');
+    }
+
+    // public function keterangan($id_agenda)
+    // {
+    //     $id_agenda = $this->input->post('id_agenda');
+    //     $data = array(
+    //         'page' => "Agenda",
+    //         'keterangan' => $this->input->post('keterangan')
+    //     );
+
+    //         $this->Agenda_model->update_keterangan($id_agenda, $data);
+    //         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data berhasil diupdate!</div>');
+	// 		redirect('tabelagenda');
+    // }
 
 
 }
