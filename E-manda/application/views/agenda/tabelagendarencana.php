@@ -28,7 +28,7 @@
 						<th>Agenda</th>
 						<th>Tempat</th>
 						<th>Sector</th>
-						<th>Disposisi</th>
+						<th>Konfirmasi Kehadiran</th>
 						<th>Keterangan</th>
 						
 						
