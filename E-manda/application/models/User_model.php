@@ -41,7 +41,8 @@
                 'email' => $data['email'],
 				'nama'  => $data['nama'],
                 'username'  => $data['username'],
-                'password'  => $data['password']
+                'password'  => $data['password'],
+                'no_whatsapp'  => $data['no_whatsapp']
             );
 
             $this->db->where('id_user', $id_user);

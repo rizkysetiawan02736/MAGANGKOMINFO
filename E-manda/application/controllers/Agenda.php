@@ -34,7 +34,7 @@ class Agenda extends CI_Controller{
         //menampilkan view create
         public function create()
         {
-			$data['page'] = "Agenda";
+			$data['page'] = "Hasil";
             $data['list'] = $this->Agenda_model->getdata();
             $this->load->view('agenda/create', $data);
         }
@@ -43,17 +43,16 @@ class Agenda extends CI_Controller{
          public function store()
          {
             $data = [
-				'id_user' => $this->input->post('id_user'),
+				
 				'nama_agenda' => $this->input->post('nama_agenda'),
 				'tanggal' => $this->input->post('tanggal'),
 				'jam' => $this->input->post('jam'),
 				'tempat' => $this->input->post('tempat'),
 				'leading_sector' => $this->input->post('leading_sector'),
-				'disposisi' => $this->input->post('disposisi'),
 				'keterangan' => $this->input->post('keterangan')
 			];
 
-            $this->form_validation->set_rules('id_user', 'id_user', 'required');
+            
             $this->form_validation->set_rules('nama_agenda', 'nama_agenda', 'required');
 			$this->form_validation->set_rules('tanggal', 'tanggal', 'required');
 			$this->form_validation->set_rules('jam', 'jam', 'required');
@@ -80,7 +79,7 @@ class Agenda extends CI_Controller{
         {
             $Agenda = $this->Agenda_model->show($id_agenda);
             $data = [
-				'page' => "Agenda",
+				'page' => "Hasil",
                 'data' => $Agenda
             ];
             $this->load->view('Agenda/show', $data);
@@ -91,7 +90,7 @@ class Agenda extends CI_Controller{
         {
             $Agenda = $this->Agenda_model->show($id_agenda);
             $data = [
-                'page' => "Agenda",
+                'page' => "Hasil",
 				'Agenda' => $Agenda
             ];
             $this->load->view('Agenda/edit', $data);
@@ -104,14 +103,12 @@ class Agenda extends CI_Controller{
             // TODO: implementasi update data berdasarkan $id_agenda
             $id_agenda = $this->input->post('id_agenda');
             $data = array(
-                'page' => "Agenda",
-				'id_user' => $this->input->post('id_user'),
+                'page' => "Hasil",		
 				'nama_agenda' => $this->input->post('nama_agenda'),
                 'tanggal' => $this->input->post('tanggal'),
                 'jam' => $this->input->post('jam'),
                 'tempat' => $this->input->post('tempat'),
                 'leading_sector' => $this->input->post('leading_sector'),
-                'disposisi' => $this->input->post('disposisi'),
                 'keterangan' => $this->input->post('keterangan')
             );
 
@@ -128,40 +125,109 @@ class Agenda extends CI_Controller{
         }
 
         public function cari(){
+            
             $nama=$_GET['nama'];
+            // $no_whatsapp=$_GET['no_whatsapp'];
             $cari=$this->Agenda_model->cari_user($nama)->result();
             echo json_encode($cari);
         }
 
         
-    public function hadir_pribadi($id_agenda)
-    {
-        $sql="UPDATE agenda SET disposisi='Hadir Pribadi' WHERE id_agenda=$id_agenda";
-        $this->db->query($sql);
-        $this->session->set_flashdata('message','<div class="alert alert-success" role="alert">  Kehadiran telah berhasil diubah<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
-        redirect('tabelagenda');
-    }
-
-    public function diwakilkan($id_agenda)
-    {
-        $sql="UPDATE agenda SET disposisi='Diwakilkan' WHERE id_agenda=$id_agenda";
-        $this->db->query($sql);
-        $this->session->set_flashdata('message','<div class="alert alert-warning" role="alert">  Kehadiran telah berhasil diubah<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
-        redirect('tabelagenda');
-    }
-
-    // public function keterangan($id_agenda)
+    // public function hadir_pribadi($id_penugasan)
     // {
-    //     $id_agenda = $this->input->post('id_agenda');
-    //     $data = array(
-    //         'page' => "Agenda",
-    //         'keterangan' => $this->input->post('keterangan')
-    //     );
-
-    //         $this->Agenda_model->update_keterangan($id_agenda, $data);
-    //         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data berhasil diupdate!</div>');
-	// 		redirect('tabelagenda');
+    //     $sql="UPDATE penugasan SET disposisi='Hadir Pribadi' WHERE id_penugasan=$id_penugasan";
+    //     $this->db->query($sql);
+    //     $this->session->set_flashdata('message','<div class="alert alert-success" role="alert">  Kehadiran telah berhasil diubah<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+    //     redirect('tabelagenda');
     // }
+
+    // public function diwakilkan($id_penugasan)
+    // {
+    //     $sql="UPDATE penugasan SET disposisi='Diwakilkan' WHERE id_penugasan=$id_penugasan";
+    //     $this->db->query($sql);
+    //     $this->session->set_flashdata('message','<div class="alert alert-warning" role="alert">  Kehadiran telah berhasil diubah<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+    //     redirect('tabelagenda');
+    // }
+
+    public function tambah_penugasan()
+         {
+            $nama = $_POST["nama"];
+			$no_whatsapp = $_POST["no_whatsapp"];
+            $data = [
+				'id_user' => $this->input->post('id_user'),
+				'id_agenda' => $this->input->post('id_agenda'),
+				// 'disposisi' => $this->input->post('disposisi')
+			];
+
+            $this->form_validation->set_rules('id_user', 'id_user', 'required');
+            $this->form_validation->set_rules('id_agenda', 'id_agenda', 'required');
+
+            $curl = curl_init();
+		
+			curl_setopt_array($curl, array(
+				CURLOPT_URL => 'https://api.fonnte.com/send',
+				CURLOPT_RETURNTRANSFER => true,
+				CURLOPT_ENCODING => '',
+				CURLOPT_MAXREDIRS => 10,
+				CURLOPT_TIMEOUT => 0,
+				CURLOPT_FOLLOWLOCATION => true,
+				CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+				CURLOPT_CUSTOMREQUEST => 'POST',
+				CURLOPT_POSTFIELDS => array(
+					'target' => $no_whatsapp,
+					'message' => "Diberitahukan kepada saudara $nama bahwa ada agenda yang harus anda ikuti, buka aplikasi E-MANDA untuk mengisi daftar hadir agenda.",
+					// 'url'=> $pdf,
+					// 'filename'=> 'aa',
+					'countryCode' => '62', //optional
+				),
+				CURLOPT_HTTPHEADER => array(
+					'Authorization: 3HB!!3+uhZxBm7NmSR!f' //change TOKEN to your actual token
+				),
+			));
+		
+			$response = curl_exec($curl);
+		
+			curl_close($curl);
+			
+
+            if ($this->form_validation->run() != false) {
+				$result = $this->Agenda_model->insert_penugasan($data);
+				if ($result) {
+					$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data berhasil dikirim!</div>');
+					redirect('tabelagendaadmin');
+				}
+                if (isset($response)) 
+			    {
+			    // $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Pesan berhasil dikirim!</div>');
+                redirect('tabelagendaadmin');
+			    }
+                // else {
+			    // 	// $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Pesan gagal dikirim!</div>');
+			    // 	redirect('tabelagendaadmin');
+                
+			    // }
+			    } else {
+			    	$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Data gagal dikirim!</div>');
+			    	redirect('tabelagendaadmin');
+                
+			    } 
+
+            
+                
+
+         }
+
+         public function penugasan($id_agenda)
+        {
+
+            $Agenda = $this->Agenda_model->show($id_agenda);
+            $data = [
+				'page' => "Hasil",
+                'list' => $this->Agenda_model->getdata(),
+                'data' => $Agenda
+            ];
+            $this->load->view('Agenda/penugasan', $data);
+        }
 
 
 }

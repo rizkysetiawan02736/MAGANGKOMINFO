@@ -79,14 +79,17 @@
             </div>
 
             <div class="form-group">
-            <label for="Manufacturer" class="float-left" style="color:#ffffff;"> User Level : </label>
-            <select id="cmbUL" name="privilege" class="float-right" required>
+            <!-- <label for="user_level" class="float-left" style="color:#ffffff;"> User Level : </label> -->
+            <!-- <select id="cmbUL" name="privilege" class="float-right" required>
                <option value="">Pilih</option>
                <option value="2">2</option>
-            </select>
+            </select> -->
+            <div>
+            <input type="hidden" class="form-control" id="privilege" name="privilege" value="2" required>
+            </div>
             </div>
             <br>
-            <br>
+            
             
 
             

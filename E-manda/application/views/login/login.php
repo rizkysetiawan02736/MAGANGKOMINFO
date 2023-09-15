@@ -23,7 +23,7 @@
     <body class="bg-gradient-success">
         <nav class="navbar navbar-expand-lg navbar-dark bg-white shadow-lg pb-3 pt-3 font-weight-bold">
             <div class="container">
-                <a class="navbar-brand text-success" style="float: left; margin-left: -200pt;" href="<?= base_url('')?>"> <img class="me-3" src="<?= base_url('assets/')?>img/amndari.png" alt="" width="100" height="100"/></a>
+                <a class="navbar-brand text-success" style="float: left; margin-left: -100pt;" href="<?= base_url('')?>"> <img class="me-3" src="<?= base_url('assets/')?>img/amndari.png" alt="" width="100" height="100"/></a>
             </div>
         </nav>
 
@@ -82,7 +82,7 @@
                         <div class="text-justify card-body p-0">
                             <h4 style="font-weight: 800;">Aplikasi Manajemen Agenda</h4>
                             <p class="pt-4">
-                                Aplikasi E-MANDA bertujuan untuk membantu penjadwalan agenda pimpinan Bupati atau Kepala OPD.
+                                Aplikasi E-MANDA bertujuan untuk membantu penjadwalan agenda pimpinan (Bupati atau Kepala OPD).
                             </p>
                             <p>
                                 Dengan adanya aplikasi ini,  penjadwalan agenda Bupati atau Kepala OPD diharapkan akan menjadi lebih mudah.

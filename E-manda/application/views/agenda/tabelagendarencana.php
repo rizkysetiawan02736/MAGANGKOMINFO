@@ -19,7 +19,7 @@
 
     <div class="card-body">
 		<div class="table-responsive">
-			<table class="table table-bordered" width="100%" cellspacing="0">
+			<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead class="bg-success text-white">
 					<tr align="center">
 						<th width="5%">No</th>
@@ -39,9 +39,9 @@
 						$no=1;
 						foreach ($agenda_user as $data => $value) {
 							$disposisi = "<span style='font-size:10;' class='label label-success'>Hadir Pribadi</span>";
-								if($value->disposisi=='')$disposisi= "<a href='uh/$value->id_agenda' class='btn btn-primary btn-sm' data-popup='tooltip' data-placement='top' title='Hadir'><i class='fa fa-check' aria-hidden='true'> Hadir Pribadi</i></a>
+								if($value->disposisi=='')$disposisi= "<a href='uh/$value->id_penugasan' class='btn btn-primary btn-sm' data-popup='tooltip' data-placement='top' title='Hadir'><i class='fa fa-check' aria-hidden='true'> Hadir Pribadi</i></a>
 								
-								<a href='ud/$value->id_agenda' class='btn btn-secondary btn-sm data-popup='tooltip' data-placement='top' title='Diwakilkan'><i class='fa fa-check' aria-hidden='true'> Diwakilkan</i></a>";
+								<a href='ud/$value->id_penugasan' class='btn btn-secondary btn-sm data-popup='tooltip' data-placement='top' title='Diwakilkan'><i class='fa fa-check' aria-hidden='true'> Diwakilkan</i></a>";
 								else if($value->disposisi=='Diwakilkan')$disposisi="<span style='font-size:10;' class='label label-warning'>Diwakilkan</span>";
 								?>
 
@@ -54,6 +54,7 @@
 						<td><?php echo $value->leading_sector ?></td>
 						<td><?php echo $disposisi ?></td>
 						<td><?php echo $value->keterangan ?></td>
+					</tr>	
 
 											
                 <?php

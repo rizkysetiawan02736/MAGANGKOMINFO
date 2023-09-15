@@ -37,7 +37,7 @@
                             <div class="h5 mb-0 font-weight-bold text-gray-800"><a href="<?= base_url(); ?>tabelagendaadmin" class="text-secondary text-decoration-none">Data Agenda</a></div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-cube fa-2x text-gray-300"></i>
+                            <i class="fas fa-calendar-alt fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><a href="<?= base_url(); ?>tambahagenda" class="text-secondary text-decoration-none">Tambah Agenda</a></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><a href="<?= base_url(); ?>tabelpenugasan" class="text-secondary text-decoration-none">Data Penugasan</a></div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-briefcase fa-2x text-gray-300"></i>
@@ -89,20 +89,7 @@
             </div>
         </div>
 
-        <div class="col-xl-4 col-md-6 mb-4">
-            <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><a href="<?= base_url(); ?>kirimnotif" class="text-secondary text-decoration-none">Kirim Notifikasi</a></div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-comment fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
 
         
 		
@@ -146,7 +133,7 @@
                             <div class="h5 mb-0 font-weight-bold text-gray-800"><a href="<?= base_url(); ?>tabelagenda" class="text-secondary text-decoration-none">Data Agenda</a></div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-chart-area fa-2x text-gray-300"></i>
+                            <i class="fas fa-calendar-alt fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>

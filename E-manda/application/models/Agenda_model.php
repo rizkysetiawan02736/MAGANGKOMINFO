@@ -13,19 +13,26 @@
     
         }
 
+        public function insert_penugasan($data = [])
+        {
+            $result=$this->db->insert('penugasan', $data);
+            return $result;
+    
+        }
+
         public function tampil()
         {
             $query = $this->db->get('agenda');
             return $query->result();
         }
 
-        public function tampil_tanggal()
-        {
-            $this->db->where('agenda.id_user', $this->session->userdata('id_user'));
-            $this->db->select_min('tanggal');
-            $this->db->where('tanggal >= NOW()');
-            return $this->db->get('agenda')->result();
-        }
+        // public function tampil_tanggal()
+        // {
+        //     $this->db->where('agenda.id_user', $this->session->userdata('id_user'));
+        //     $this->db->select_min('tanggal');
+        //     $this->db->where('tanggal >= NOW()');
+        //     return $this->db->get('agenda')->result();
+        // }
 
         public function tampil_jabatan()
         {
@@ -46,13 +53,12 @@
         public function update($id_agenda, $data = [])
         {
             $ubah = array(
-                'id_user'  => $data['id_user'],
+                
                 'nama_agenda' => $data['nama_agenda'],
                 'tanggal'  => $data['tanggal'],
                 'jam'  => $data['jam'],
                 'tempat'  => $data['tempat'],
                 'leading_sector'  => $data['leading_sector'],
-                'disposisi'  => $data['disposisi'],
                 'keterangan'  => $data['keterangan']
                 
             );
@@ -85,9 +91,25 @@
             return $this->db->get('agenda')->result();
         }
 
+        public function getPenugasanxAgenda(){
+            $this->db->select('*');  
+            $this->db->from('penugasan');
+            $this->db->join('agenda', 'penugasan.id_agenda=agenda.id_agenda');
+            $this->db->where('penugasan.id_user', $this->session->userdata('id_user'));
+            $this->db->where('tanggal >= NOW()');
+            $this->db->order_by('tanggal ASC');
+            return $this->db->get()->result();
+        }
+
+        // public function getAgendaadmin()
+        // {
+        //     $query = $this->db->query('SELECT * FROM penugasan join agenda where penugasan.id_agenda=agenda.id_agenda order by tanggal asc');
+        //     return $query->result();
+        // }
+
         public function getAgendaadmin()
         {
-            $query = $this->db->query('SELECT * FROM agenda order by tanggal asc');
+            $query = $this->db->query('SELECT * FROM agenda  order by tanggal asc');
             return $query->result();
         }
 

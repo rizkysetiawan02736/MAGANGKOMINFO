@@ -1,7 +1,10 @@
 <?php $this->load->view('layouts/header_admin'); ?>
 
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800"><i class="fas fa-fw fa-cube"></i> Data Agenda</h1>	
+    <h1 class="h3 mb-0 text-gray-800"><i class="fas fa-fw fa-calendar-alt"></i> Data Agenda</h1>	
+	<a href="<?= base_url(); ?>tabelagendaadmin" class="btn btn-secondary btn-icon-split"><span class="icon text-white-50"><i class="fas fa-arrow-left"></i></span>
+		<span class="text">Kembali</span>
+	</a>
 </div>
 
 <?= $this->session->flashdata('message'); ?> 
@@ -20,17 +23,17 @@
 			<div class="row">
                 
 
-				<div class="form-group col-md-6">
+				<!-- <div class="form-group col-md-6">
 					<label class="font-weight-bold">Nama User</label>
 
 
 					<div class="input Nama"><input autocomplete="off" list="data_user" name="nama" id="nama" type="text" class="form-control" id="nama" placeholder="Muhammad Rizxxxxx" onchange="return autofill();" required /></div>
-				</div>
+				</div> -->
 
-				<div class="form-group col-md-6">
+				<!-- <div class="form-group col-md-6">
 					<label class="font-weight-bold">ID User</label>
 					<input autocomplete="off" type="number" id="id_user" name="id_user" required class="form-control" />
-				</div>
+				</div> -->
 
 				<div class="form-group col-md-6">
 					<label class="font-weight-bold">Nama Agenda</label>
@@ -57,10 +60,10 @@
 					<input autocomplete="off" type="text" name="leading_sector" required class="form-control" />
 				</div>
 
-				<div class="form-group col-md-6">
+				<!-- <div class="form-group col-md-6">
 					<label class="font-weight-bold">Disposisi</label>
 					<input autocomplete="off" type="text" name="disposisi" class="form-control" />
-				</div>
+				</div> -->
 
 				<div class="form-group col-md-6">
 					<label class="font-weight-bold">Keterangan</label>
@@ -78,7 +81,7 @@
 		<br>
 	<?php echo form_close() ?>
 
-	<datalist id="data_user">
+	<!-- <datalist id="data_user">
             <?php
 							$no=1;
                             foreach ($list as $data => $value) {
@@ -91,9 +94,9 @@
                 }
                 ?>
              
-            </datalist> 
+            </datalist>  -->
 
-	<script>
+	<!-- <script>
               function autofill(){
                 var nama =document.getElementById('nama').value;
                 $.ajax({
@@ -110,7 +113,7 @@
                           }
                 });
               }
-            </script>
+            </script> -->
 
 </div>
 

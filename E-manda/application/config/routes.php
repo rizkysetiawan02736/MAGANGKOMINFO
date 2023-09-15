@@ -62,12 +62,16 @@ $route['tambahagenda']='Agenda/create';
 $route['dashboard']='Login/home';
 $route['cetakagenda']='Cetak';
 $route['cetakagendaadmin']='Cetak/cetakadmin';
+$route['cetakexcel']='Cetak/cetak_excel';
 $route['daftar']='Register';
 $route['masuk']='Login/logiin';
 $route['tambahdatauser']='User/create';
 $route['kirimnotif']='Send';
 $route['carinohp']='Send/cari';
 $route['cariiduser']='Agenda/cari';
+$route['tabelpenugasan']='Penugasan';
+// $route['tabelbertugas']='Penugasan/bertugas';
+
 
 $route['ubah-user/(:num)']='User/edit/$1';
 $route['lihat-user/(:num)']='User/show/$1';
@@ -76,6 +80,10 @@ $route['hapus-user/(:num)']='User/destroy/$1';
 $route['hapus-agenda/(:num)']='Agenda/destroy/$1';
 $route['ubah-agenda/(:num)']='Agenda/edit/$1';
 $route['lihat-agenda/(:num)']='Agenda/show/$1';
+$route['penugasan-agenda/(:num)']='Agenda/penugasan/$1';
+$route['hapus-penugasan/(:num)']='Penugasan/destroy/$1';
+
+$route['tabelbertugas/(:num)']='Penugasan/bertugas/$1';
 
 $route['uh/(:num)']='Approval/hadir_pribadi/$1';
 $route['ud/(:num)']='Approval/diwakilkan/$1';

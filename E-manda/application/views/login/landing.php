@@ -41,7 +41,7 @@
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
-    <h1 class="logo me-auto"><img class="me-3" src="assets/img/emandaku.svg" alt="" /></h1>
+    <h1 class="logo me-auto"><img class="me-3" src="assets/img/emandaku.svg" alt="" width="40" height="100" /></h1>
 
       
       <!-- Uncomment below if you prefer to use an image logo -->

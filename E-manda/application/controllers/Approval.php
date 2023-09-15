@@ -22,17 +22,17 @@ class Approval extends CI_Controller{
 
 
         
-    public function hadir_pribadi($id_agenda)
+    public function hadir_pribadi($id_penugasan)
     {
-        $sql="UPDATE agenda SET disposisi='Hadir Pribadi' WHERE id_agenda=$id_agenda";
+        $sql="UPDATE penugasan SET disposisi='Hadir Pribadi' WHERE id_penugasan=$id_penugasan";
         $this->db->query($sql);
         $this->session->set_flashdata('message','<div class="alert alert-success" role="alert">  Kehadiran telah berhasil ditambahkan<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
         redirect('tabelagenda');
     }
 
-    public function diwakilkan($id_agenda)
+    public function diwakilkan($id_penugasan)
     {
-        $sql="UPDATE agenda SET disposisi='Diwakilkan' WHERE id_agenda=$id_agenda";
+        $sql="UPDATE penugasan SET disposisi='Diwakilkan' WHERE id_penugasan=$id_penugasan";
         $this->db->query($sql);
         $this->session->set_flashdata('message','<div class="alert alert-success" role="alert">  Kehadiran telah berhasil ditambahkan<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
         redirect('tabelagenda');

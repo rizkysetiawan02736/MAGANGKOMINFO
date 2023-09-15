@@ -18,7 +18,7 @@
 						<th>Agenda</th>
 						<th>Tempat</th>
 						<th>Leading Sector</th>
-						<th>Disposisi</th>
+						
 						<th>Keterangan</th>
 						
 						<!-- <th width="15%">Aksi</th> -->
@@ -36,7 +36,7 @@
 						<td><?php echo $value->nama_agenda ?></td>
 						<td><?php echo $value->tempat ?></td>
 						<td><?php echo $value->leading_sector ?></td>
-						<td><?php echo $value->disposisi ?></td>
+						
 						<td><?php echo $value->keterangan ?></td>
 						
 						

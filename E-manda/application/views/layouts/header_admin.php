@@ -67,18 +67,23 @@ if($this->session->status !== ('Logged'))
       </div>
 
 	  <?php if($this->session->userdata('id_user_level') == '1'): ?>
-	  
 	  <li class="nav-item <?php if($page=='Hasil'){echo 'active';}?>">
         <a class="nav-link" href="<?= base_url(); ?>tabelagendaadmin">
-          <i class="fas fa-fw fa-chart-area"></i>
+          <i class="fas fa-fw fa-calendar-alt"></i>
           <span>Data Agenda</span></a>
+      </li>
+
+      <li class="nav-item <?php if($page=='Penugasan'){echo 'active';}?>">
+        <a class="nav-link" href="<?= base_url(); ?>tabelpenugasan">
+          <i class="fas fa-briefcase"></i>
+          <span>Data Penugasan</span></a>
       </li>
 	  <?php endif; ?>
 	  
 	  <?php if($this->session->userdata('id_user_level') == '2'): ?>
 	  <li class="nav-item <?php if($page=='Hasil'){echo 'active';}?>">
         <a class="nav-link" href="<?= base_url(); ?>tabelagenda">
-          <i class="fas fa-fw fa-chart-area"></i>
+          <i class="fas fa-fw fa-calendar-alt"></i>
           <span>Data Agenda</span></a>
       </li>	
 	  <?php endif; ?>
@@ -106,21 +111,17 @@ if($this->session->status !== ('Logged'))
       </li>
 
       <!-- Divider -->
-      <hr class="sidebar-divider">
+      <!-- <hr class="sidebar-divider"> -->
 	  
 	  <!-- Heading -->
-      <div class="sidebar-heading">
+      <!-- <div class="sidebar-heading">
         Tools
-      </div>
+      </div> -->
 
-    <?php if($this->session->userdata('id_user_level') == '1'): ?>
+    <!-- <?php if($this->session->userdata('id_user_level') == '1'): ?>
 
 
-      <li class="nav-item <?php if($page=='Agenda'){echo 'active';}?> ">
-        <a class="nav-link" href="<?= base_url(); ?>tambahagenda">
-          <i class="fas fa-briefcase"></i>
-          <span>Tambah Agenda</span></a>
-      </li>
+      
 
       <li class="nav-item <?php if($page=='Send'){echo 'active';}?> ">
         <a class="nav-link" href="<?= base_url(); ?>kirimnotif">
@@ -128,7 +129,7 @@ if($this->session->status !== ('Logged'))
           <span>Kirim Notifikasi</span></a>
       </li>
 
-      <?php endif; ?>
+      <?php endif; ?> -->
 	 
 
       <!-- Divider -->
